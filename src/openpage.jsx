@@ -5,7 +5,7 @@ const Openpage = () =>{
     const navigate = useNavigate()
 
     const changePage = () =>{
-        navigate("/hello")
+        navigate("/reg")
     }
 
     return(
@@ -13,7 +13,7 @@ const Openpage = () =>{
            <button className="custom-shape" onClick={changePage}>
                <span>Register</span>
            </button>
-           <button className="custom-shape" onClick={changePage}>
+           <button className="custom-shape">
                <span>Log In</span>
            </button>
         </div>
