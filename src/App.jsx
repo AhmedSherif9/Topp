@@ -1,12 +1,23 @@
+"use client"
 //import logo from './logo.svg';
 import './App.css';
-import Pharmacy from './pharmacy';
+import Openpage from './openpage';
+import Register from './register';
+import { BrowserRouter as Router, Routes , Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
-       <Pharmacy />
-    </div>
+    <Router>
+      <Routes>
+
+        <Route path="/" element={<Openpage />}>
+        </Route>
+
+        <Route path="/hello" element={<Register />}>
+        </Route>
+
+      </Routes>
+    </Router>
   );
 }
 
