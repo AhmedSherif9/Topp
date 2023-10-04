@@ -1,14 +1,21 @@
 import "./openpage.css";
+import { useNavigate } from "react-router-dom";
 
 const Openpage = () =>{
+    const navii = useNavigate()
+
+    const changePage = () =>{
+        navii("/hello")
+    }
+
     return(
         <div class="shape-container">
-           <div class="custom-shape">
+           <button class="custom-shape" onClick={changePage()}>
                <span>Register</span>
-           </div>
-           <div class="custom-shape">
+           </button>
+           <button class="custom-shape" onClick={changePage()}>
                <span>Log In</span>
-           </div>
+           </button>
         </div>
     )
 }

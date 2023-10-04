@@ -1,23 +1,23 @@
 "use client"
 //import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Openpage from './openpage';
 import Register from './register';
-import { BrowserRouter as Router, Routes , Route } from 'react-router-dom';
 
 function App() {
   return (
-    <Router>
+    <main className='container'>
+    <BrowserRouter>
       <Routes>
 
-        <Route path="/" element={<Openpage />}>
-        </Route>
+        <Route path="/" element={<Openpage />} />
 
-        <Route path="/hello" element={<Register />}>
-        </Route>
+        <Route path="/hello" element={<Register />} />
 
       </Routes>
-    </Router>
+    </BrowserRouter>
+    </main>
   );
 }
 
