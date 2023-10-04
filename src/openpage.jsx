@@ -2,7 +2,7 @@ import "./openpage.css";
 import { useNavigate } from "react-router-dom";
 
 const Openpage = () =>{
-    const navii = useNavigate()
+    const navigate = useNavigate()
 
     const changePage = () =>{
         navii("/hello")
