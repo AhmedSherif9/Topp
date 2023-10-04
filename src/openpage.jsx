@@ -13,6 +13,7 @@ const Openpage = () =>{
            <button className="custom-shape" onClick={changePage}>
                <span>Register</span>
            </button>
+           <h3 style={{color : "white"}}>or</h3>
            <button className="custom-shape">
                <span>Log In</span>
            </button>
