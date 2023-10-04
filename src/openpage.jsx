@@ -5,15 +5,15 @@ const Openpage = () =>{
     const navigate = useNavigate()
 
     const changePage = () =>{
-        navii("/hello")
+        navigate("/hello")
     }
 
     return(
-        <div class="shape-container">
-           <button class="custom-shape" onClick={changePage()}>
+        <div className="shape-container">
+           <button className="custom-shape" onClick={changePage}>
                <span>Register</span>
            </button>
-           <button class="custom-shape" onClick={changePage()}>
+           <button className="custom-shape" onClick={changePage}>
                <span>Log In</span>
            </button>
         </div>
