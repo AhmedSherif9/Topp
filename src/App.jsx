@@ -7,6 +7,7 @@ import Register from './register';
 import Registerr from './register2';
 import Adminhome from './Adminhome';
 
+
 function App() {
   return (
     <main className='container'>
