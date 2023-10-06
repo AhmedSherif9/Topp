@@ -1,5 +1,5 @@
 .registration-form-container {
-    max-width: 400px;
+    max-width: 500px;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid black;
@@ -7,8 +7,11 @@
   }
   
   .form-group {
+    display: inline-block;
+    margin-right: 20px; /* Adjust this margin as needed to create space between fields */
     margin-bottom: 10px;
   }
+  
   
   .form-group label {
     display: block;

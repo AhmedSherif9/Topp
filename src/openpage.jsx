@@ -4,18 +4,22 @@ import { useNavigate } from "react-router-dom";
 const Openpage = () =>{
     const navigate = useNavigate()
 
-    const changePage = () =>{
-        navigate("/reg")
+    const changePage = (exten) =>{
+        navigate(exten)
     }
 
     return(
         <div className="shape-container">
-           <button className="custom-shape" onClick={changePage}>
-               <span>Register</span>
+           <button className="custom-shape" onClick={()=>{changePage("/regpa")}}>
+               <span>Register as a patient</span>
            </button>
-           <h3 style={{color : "white"}}>or</h3>
-           <button className="custom-shape">
-               <span>Log In</span>
+           <h5 style={{color : "white"}}>or</h5>
+           <button className="custom-shape" onClick={()=>{changePage("/regph")}}>
+               <span>Register as a pharmacist</span>
+           </button>
+           <h5 style={{color : "white"}}>or</h5>
+           <button className="custom-shape" onClick={()=>{changePage("/adminhome")}}>
+               <span>Log In as an adminstrator </span>
            </button>
         </div>
     )

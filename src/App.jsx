@@ -4,6 +4,8 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Openpage from './openpage';
 import Register from './register';
+import Registerr from './register2';
+import Adminhome from './Adminhome';
 
 function App() {
   return (
@@ -13,7 +15,11 @@ function App() {
 
         <Route path="/" element={<Openpage />} />
 
-        <Route path="/reg" element={<Register />} />
+        <Route path="/regpa" element={<Register />} />
+
+        <Route path="/regph" element={<Registerr />} />
+
+        <Route path="/adminhome" element={<Adminhome />} />
 
       </Routes>
     </BrowserRouter>
