@@ -9,6 +9,7 @@ const AppProvider = ({children}) => {
     // const [loading, setLoading] = useState(false)
     const [showModal,setShowModal] = useState(false)
     const [selectedMedicine,setSelectedMedicine] = useState(null)
+    const [selectedRequest,setSelectedRequest] = useState(null)
 
     const getMedicines = () =>{
         const meds = [
@@ -100,6 +101,51 @@ const AppProvider = ({children}) => {
         ]
         return phars;
     }
+    const getRequests = () =>{
+        const phars = [
+            {
+            username:"khelo",
+            name:"khaled",
+            email: "khaled@gmail.com",
+            password: "abc",
+            dateofbirth: "5 jan 2002",
+            hourlyRate: 4 ,
+            affiliation:"Magdy hospital", 
+            educationalBackground:"abc"
+            },
+            {
+            username:"zozz",
+            name:"zozz",
+            email: "ziad@gmail.com",
+            password: "abc",
+            dateofbirth: "5 jan 2002",
+            hourlyRate: 4 ,
+            affiliation:"Magdy hospital", 
+            educationalBackground:"abc"
+            },
+            {
+            username:"mo",
+            name:"mo",
+            email: "omar@gmail.com",
+            password: "abc",
+            dateofbirth: "5 jan 2002",
+            hourlyRate: 4 ,
+            affiliation:"Magdy hospital", 
+            educationalBackground:"abc"
+            },
+            {
+            username:"zozo",
+            name:"zozo",
+            email: "zeyad@gmail.com",
+            password: "abc",
+            dateofbirth: "5 jan 2002",
+            hourlyRate: 4 ,
+            affiliation:"Magdy hospital", 
+            educationalBackground:"abc"
+            }
+        ]
+        return phars;
+    }
     const getPatients = () =>{
         const patients = [
             {
@@ -130,8 +176,9 @@ const AppProvider = ({children}) => {
         return patients;
     }
     const [medicines] = useState(getMedicines())
-    const [pharmacists, setPharmacists] = useState(getPharmacists)
+    const [pharmacists, setPharmacists] = useState(getPharmacists())
     const [patients, setPatients] = useState(getPatients())
+    const [requests] = useState(getRequests())
     // const [searchTerm,setSearchTerm] = useState("a")
     // const [showModal,setShowModal] = useState(false)
     // const [selectedMedicine,setSelectedMedicine] = useState(null)
@@ -164,6 +211,16 @@ const AppProvider = ({children}) => {
         setShowModal(true)
     }
 
+    const selectRequest = (email) => {
+        let request;
+        request = requests.find((request) =>
+        request.email === email
+        )
+        
+        setSelectedRequest(request)
+        setShowModal(true)
+    }
+
     const closeModal = ()=>{
         setShowModal(false)
     }
@@ -187,7 +244,7 @@ const AppProvider = ({children}) => {
     // :>>>
     
     return (
-        <AppContext.Provider value={{medicines,selectedMedicine,selectMedicine,closeModal,showModal,patients,pharmacists,removePharmacist,removePatient}}>
+        <AppContext.Provider value={{medicines,selectedMedicine,selectMedicine,closeModal,showModal,patients,pharmacists,removePharmacist,removePatient,requests,selectRequest,selectedRequest}}>
             {children}
         </AppContext.Provider>
     )

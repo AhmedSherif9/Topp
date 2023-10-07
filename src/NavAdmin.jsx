@@ -15,7 +15,7 @@ const NavAdmin = () =>{
                 <Link className="nav-link" to="/addadmin" style={{"color":"white"}}>Add Adminstrator</Link>
                 </li>
                 <li className="nav-item">
-                <Link className="nav-link" to="/apprequests" style={{"color":"white"}}>Application requests</Link>
+                <Link className="nav-link" to="/requestshome" style={{"color":"white"}}>Application requests</Link>
                 </li>
             </ul>
         </nav>
