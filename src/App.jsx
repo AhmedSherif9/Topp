@@ -11,6 +11,7 @@ import Pharmacisthome from './Pharmacisthome';
 import Patienthome from './Patienthome';
 import Pharmacistsview from './pharmacistsview';
 import Patientsview from './patientsview';
+import Addadmin from './addadmin';
 
 function App() {
   return (
@@ -35,6 +36,8 @@ function App() {
         <Route path="/pharview" element={<Pharmacistsview />} />
 
         <Route path="/patientsview" element={<Patientsview />} />
+
+        <Route path="/addadmin" element={<Addadmin />} />
 
       </Routes>
     </BrowserRouter>
