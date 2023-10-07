@@ -335,6 +335,6 @@ cursor:pointer;
   color:var(--black)
 }
 .close-btn{
-  background:var(--red-dark);
-  color:var(--white);
+  background:var(--red-dark) !important;
+  color:var(--white) !important;
 }

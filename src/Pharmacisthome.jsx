@@ -1,19 +1,17 @@
 import { useGlobalContext } from "./context"
 import Search from "./Search"
 import Medicines from "./Medicines"
-import Modal from "./Modal"
-import NavAdmin from "./NavAdmin"
+import ModalPhar from "./ModalPhar"
 import "./web.css"
 
-const Adminhome = () => {
+const Pharmacisthome = () => {
     const {showModal} = useGlobalContext()
     return (
         <main style={{"margin-top": "500px"}}>
-        <NavAdmin/>
         <Search/>
         <Medicines/>
-        {showModal && <Modal />}
+        {showModal && <ModalPhar />}
         </main>
     )
 }
-export default Adminhome
+export default Pharmacisthome

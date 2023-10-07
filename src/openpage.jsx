@@ -18,8 +18,8 @@ const Openpage = () =>{
                <span>Register as a pharmacist</span>
            </button>
            <h5 style={{color : "white"}}>or</h5>
-           <button className="custom-shape" onClick={()=>{changePage("/adminhome")}}>
-               <span>Log In as an adminstrator </span>
+           <button className="custom-shape" onClick={()=>{changePage("/two")}}>
+               <span>Log In</span>
            </button>
         </div>
     )
