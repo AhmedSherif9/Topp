@@ -2,7 +2,7 @@ import { useGlobalContext } from "./context"
 import "./web.css"
 
 const Pharmacistsview = () =>{
-    const {pharmacists} = useGlobalContext()
+    const {pharmacists, removePharmacist} = useGlobalContext()
 
     // if(loading){
     //     return (
@@ -38,7 +38,7 @@ const Pharmacistsview = () =>{
                            Education:{pharmacist.education}
                         </p>
                     </footer>
-                    <button className="btn btn-sm ml-3 d-inline-block delete-button" style={{"background-color":"gray", color:"black"}}>remove</button>
+                    <button className="btn btn-sm ml-3 d-inline-block delete-button" style={{"background-color":"gray", color:"black"}} onClick={()=>removePharmacist(pharmacist.id)}>remove</button>
                 </article>
                 )
 })}

@@ -130,8 +130,8 @@ const AppProvider = ({children}) => {
         return patients;
     }
     const [medicines] = useState(getMedicines())
-    const [pharmacists] = useState(getPharmacists)
-    const [patients] = useState(getPatients())
+    const [pharmacists, setPharmacists] = useState(getPharmacists)
+    const [patients, setPatients] = useState(getPatients())
     // const [searchTerm,setSearchTerm] = useState("a")
     // const [showModal,setShowModal] = useState(false)
     // const [selectedMedicine,setSelectedMedicine] = useState(null)
@@ -168,6 +168,16 @@ const AppProvider = ({children}) => {
         setShowModal(false)
     }
 
+    const removePharmacist = (id)=>{
+        let arr = pharmacists.filter((pharmacist)=>pharmacist.id !== id)
+        setPharmacists(arr)
+    }
+
+    const removePatient = (id)=>{
+        let arr = patients.filter((patient)=>patient.id !== id)
+        setPatients(arr)
+    }
+
     // useEffect(()=> {
     //     if(searchTerm){
     //         fetchMedicines(`${allMealsUrl}${searchTerm}`);
@@ -177,7 +187,7 @@ const AppProvider = ({children}) => {
     // :>>>
     
     return (
-        <AppContext.Provider value={{medicines,selectedMedicine,selectMedicine,closeModal,showModal,patients,pharmacists}}>
+        <AppContext.Provider value={{medicines,selectedMedicine,selectMedicine,closeModal,showModal,patients,pharmacists,removePharmacist,removePatient}}>
             {children}
         </AppContext.Provider>
     )
