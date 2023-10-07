@@ -38,6 +38,7 @@ const Patientsview = () =>{
                            reason:{patient.reason}
                         </p>
                     </footer>
+                    <button className="btn btn-sm ml-3 d-inline-block delete-button" style={{"background-color":"gray", color:"black"}}>remove</button>
                 </article>
                 )
 })}

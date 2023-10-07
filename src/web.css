@@ -338,3 +338,12 @@ cursor:pointer;
   background:var(--red-dark) !important;
   color:var(--white) !important;
 }
+/* ........................................ */
+.delete-button {
+  visibility : hidden;
+  display: inline-block;
+}
+
+article:hover .delete-button{
+  visibility: visible
+}
