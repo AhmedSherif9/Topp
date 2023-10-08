@@ -23,11 +23,11 @@ const Medicines = () =>{
             {medicines.map((medicine)=>{
                 // console.log(image)
                 return (
-                <article key={medicine.name} id={medicine.name} className="single-meal" style={{"background-color":"darkred"}}>
-                    <img src={medicine.picture} alt ={"No"} className="img" onClick={()=>{selectMedicine(medicine.name)}}/>
+                <article key={medicine.Name} id={medicine.Name} className="single-meal" style={{"background-color":"darkred"}}>
+                    <img src={medicine.picture} alt ={"No"} className="img" onClick={()=>{selectMedicine(medicine.Name)}}/>
                     <footer>
                         <h5 style={{color:"white"}}>
-                            {medicine.name}
+                            {medicine.Name}
                         </h5>
                     </footer>
                 </article>
