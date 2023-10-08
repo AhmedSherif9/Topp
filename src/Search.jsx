@@ -1,8 +1,10 @@
-// import { useGlobalContext } from "./context"
+import { useGlobalContext } from "./context"
 import "./web.css"
 import { useState } from "react"
-const Search = () =>{
+import { FaFilter } from 'react-icons/fa';
 
+const Search = () =>{
+    const {setShowFilterModal} = useGlobalContext()
     const [text,setText] = useState('')
 
     // const {setSearchTerm} = useGlobalContext()
@@ -24,6 +26,7 @@ const Search = () =>{
             <input type="text" placeholder="Type medicine name..." value={text} onChange={handleChange} className="form-input" />
             <button type="submit" className="btn">search</button>
         </form>
+        <FaFilter style={{color: "white", cursor:"pointer" }} onClick={()=>setShowFilterModal(true)} />
     </header>
     )
 }

@@ -3,14 +3,16 @@ import Search from "./Search"
 import Medicines from "./Medicines"
 import Modal from "./Modal"
 import "./web.css"
+import FilterModal from "./FilterModal"
 
 const Patienthome = () => {
-    const {showModal} = useGlobalContext()
+    const {showModal,showFilterModal} = useGlobalContext()
     return (
         <main style={{"margin-top": "500px"}}>
         <Search/>
         <Medicines/>
         {showModal && <Modal />}
+        {showFilterModal && <FilterModal/>}
         </main>
     )
 }

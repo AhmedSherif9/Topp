@@ -10,6 +10,7 @@ const AppProvider = ({children}) => {
     const [showModal,setShowModal] = useState(false)
     const [showAddMediModal,setShowAddMediModal] = useState(false)
     const [showEddMediModal,setShowEddMediModal] = useState(false)
+    const [showFilterModal,setShowFilterModal] = useState(false)
     const [selectedMedicine,setSelectedMedicine] = useState(null)
     const [editedMedicine,setEditedMedicine] = useState(null)
     const [selectedRequest,setSelectedRequest] = useState(null)
@@ -24,7 +25,8 @@ const AppProvider = ({children}) => {
             description: "description",
             quantity: 280,
             sales: 50,
-            picture:"https://rhc.nhsggc.org.uk/media/1331/medicines.png?width=262&height=187&mode=max"
+            picture:"https://rhc.nhsggc.org.uk/media/1331/medicines.png?width=262&height=187&mode=max",
+            use:"Pain Relief"
             },
             {
             ingredients:[],
@@ -33,7 +35,8 @@ const AppProvider = ({children}) => {
             description: "description",
             quantity: 280,
             sales: 50,
-            picture:"https://rhc.nhsggc.org.uk/media/1331/medicines.png?width=262&height=187&mode=max"
+            picture:"https://rhc.nhsggc.org.uk/media/1331/medicines.png?width=262&height=187&mode=max",
+            use:"Infection Treatment"
             },
             {
             ingredients:[],
@@ -42,7 +45,8 @@ const AppProvider = ({children}) => {
             description: "description",
             quantity: 280,
             sales: 50,
-            picture:"https://rhc.nhsggc.org.uk/media/1331/medicines.png?width=262&height=187&mode=max"
+            picture:"https://rhc.nhsggc.org.uk/media/1331/medicines.png?width=262&height=187&mode=max",
+            use:"Cardiovascular Health"
             },
             {
             ingredients:[],
@@ -51,7 +55,8 @@ const AppProvider = ({children}) => {
             description: "description",
             quantity: 280,
             sales: 50,
-            picture:"https://rhc.nhsggc.org.uk/media/1331/medicines.png?width=262&height=187&mode=max"
+            picture:"https://rhc.nhsggc.org.uk/media/1331/medicines.png?width=262&height=187&mode=max",
+            use:"Cardiovascular Health"
             },
             {
             ingredients:[],
@@ -60,7 +65,8 @@ const AppProvider = ({children}) => {
             description: "description",
             quantity: 280,
             sales: 50,
-            picture:"https://rhc.nhsggc.org.uk/media/1331/medicines.png?width=262&height=187&mode=max"
+            picture:"https://rhc.nhsggc.org.uk/media/1331/medicines.png?width=262&height=187&mode=max",
+            use: "Mental Health"
             },
             {
             ingredients:[],
@@ -69,7 +75,8 @@ const AppProvider = ({children}) => {
             description: "description",
             quantity: 280,
             sales: 50,
-            picture:"https://rhc.nhsggc.org.uk/media/1331/medicines.png?width=262&height=187&mode=max"
+            picture:"https://rhc.nhsggc.org.uk/media/1331/medicines.png?width=262&height=187&mode=max",
+            use:"Pain Relief"
             }
         ]
         return meds;
@@ -177,6 +184,7 @@ const AppProvider = ({children}) => {
         ]
         return patients;
     }
+    const [Allmedicines] = useState(getMedicines())
     const [medicines,setMedicines] = useState(getMedicines())
     const [pharmacists, setPharmacists] = useState(getPharmacists())
     const [patients, setPatients] = useState(getPatients())
@@ -248,6 +256,10 @@ const AppProvider = ({children}) => {
         setShowEddMediModal(false)
     }
 
+    const closeFilterModal = ()=>{
+        setShowFilterModal(false)
+    }
+
     const removePharmacist = (id)=>{
         let arr = pharmacists.filter((pharmacist)=>pharmacist.id !== id)
         setPharmacists(arr)
@@ -267,7 +279,7 @@ const AppProvider = ({children}) => {
     // :>>>
     
     return (
-        <AppContext.Provider value={{medicines,setMedicines,selectedMedicine,selectMedicine,closeModal,showModal,patients,pharmacists,removePharmacist,removePatient,requests,selectRequest,selectedRequest,showAddMediModal,setShowAddMediModal,closeAddMediModal,showEddMediModal,setShowEddMediModal,closeEddMediModal,editMedicine,editedMedicine,setEditedMedicine, editedindex}}>
+        <AppContext.Provider value={{medicines,setMedicines,selectedMedicine,selectMedicine,closeModal,showModal,patients,pharmacists,removePharmacist,removePatient,requests,selectRequest,selectedRequest,showAddMediModal,setShowAddMediModal,closeAddMediModal,showEddMediModal,setShowEddMediModal,closeEddMediModal,editMedicine,editedMedicine,setEditedMedicine, editedindex,closeFilterModal,showFilterModal,setShowFilterModal,Allmedicines}}>
             {children}
         </AppContext.Provider>
     )

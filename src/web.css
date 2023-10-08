@@ -348,3 +348,7 @@ article:hover .delete-button{
   visibility: visible
 }
 /* ........................................ */
+.filter-btn{
+  background:var(--primary-500) !important;
+  color:var(--white) !important;
+}
