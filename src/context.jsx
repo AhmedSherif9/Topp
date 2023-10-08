@@ -13,6 +13,7 @@ const AppProvider = ({children}) => {
     const [selectedMedicine,setSelectedMedicine] = useState(null)
     const [editedMedicine,setEditedMedicine] = useState(null)
     const [selectedRequest,setSelectedRequest] = useState(null)
+    const [editedindex,setEditedindex] = useState(0)
 
     const getMedicines = () =>{
         const meds = [
@@ -217,8 +218,11 @@ const AppProvider = ({children}) => {
         medicine = medicines.find((medicine) =>
         medicine.Name === Name
         )
-        
         setEditedMedicine(medicine)
+
+        const index = medicines.findIndex((medicine) => medicine.Name === Name);
+        setEditedindex(index)
+
         setShowEddMediModal(true)
     }
 
@@ -263,7 +267,7 @@ const AppProvider = ({children}) => {
     // :>>>
     
     return (
-        <AppContext.Provider value={{medicines,setMedicines,selectedMedicine,selectMedicine,closeModal,showModal,patients,pharmacists,removePharmacist,removePatient,requests,selectRequest,selectedRequest,showAddMediModal,setShowAddMediModal,closeAddMediModal,showEddMediModal,setShowEddMediModal,closeEddMediModal,editMedicine,editedMedicine,setEditedMedicine}}>
+        <AppContext.Provider value={{medicines,setMedicines,selectedMedicine,selectMedicine,closeModal,showModal,patients,pharmacists,removePharmacist,removePatient,requests,selectRequest,selectedRequest,showAddMediModal,setShowAddMediModal,closeAddMediModal,showEddMediModal,setShowEddMediModal,closeEddMediModal,editMedicine,editedMedicine,setEditedMedicine, editedindex}}>
             {children}
         </AppContext.Provider>
     )

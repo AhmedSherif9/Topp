@@ -4,18 +4,9 @@ import "./web.css"
 
 const EddMediModal = () =>{
 
-    const {closeEddMediModal, medicines,setMedicines,editedMedicine,setEditedMedicine} = useGlobalContext()
+    const {closeEddMediModal, medicines,setMedicines,editedMedicine,setEditedMedicine,editedindex} = useGlobalContext()
     const [isSubmitted, setIsSubmitted] = useState(false);
 
-    const getIndex = () =>{
-        for(let i=0;i<medicines.length;i++){
-            if(medicines[i].name === editedMedicine.name){
-                return i
-            }
-        }
-        return -1
-    }
-    const n= getIndex()
       // Handle changes in input fields
       const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -49,7 +40,7 @@ const EddMediModal = () =>{
             return;
         }
         let arr = medicines
-        arr[n] = editedMedicine
+        arr[editedindex] = editedMedicine
         setMedicines(arr)
         closeEddMediModal()
       };
