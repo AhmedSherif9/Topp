@@ -9,7 +9,7 @@ import FilterModal from "./FilterModal"
 const Adminhome = () => {
     const {showModal,showFilterModal} = useGlobalContext()
     return (
-        <main style={{"margin-top": "500px"}}>
+        <main style={{"margin-top": "200px"}}>
         <NavAdmin/>
         <Search/>
         <Medicines/>
