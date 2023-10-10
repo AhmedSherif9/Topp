@@ -8,7 +8,7 @@ import FilterModal from "./FilterModal"
 const Patienthome = () => {
     const {showModal,showFilterModal} = useGlobalContext()
     return (
-        <main style={{"margin-top": "200px"}}>
+        <main style={{"margin-top": "170px"}}>
         <Search/>
         <Medicines/>
         {showModal && <Modal />}
