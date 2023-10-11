@@ -60,6 +60,26 @@ const updatepack = async (req, res) => {
  const deletepack= async(req,res)=>{
     const {name}=req.body;
     await packages.findByIdAndDelete({name:name})
- }    
+ }   
  
- module.exports={createadmin,deleteuser,docreqs}
+  
+ const viewapt= async(req,res)=>{
+  
+  const {username}=req.query
+  const {appointments}= await Patients.findOne({username:username}).select('appointments -_id').exec()
+  console.log(appointments)
+res.send(appointments)
+}   
+
+  
+const viewpres= async(req,res)=>{
+  
+  const {username}=req.query
+  const {pres}= await Patients.findOne({username:username}).select('pres -_id').exec()
+ console.log(pres)
+res.send(pres)
+}   
+
+ 
+ 
+ module.exports={createadmin,deleteuser,docreqs,viewapt,viewpres}

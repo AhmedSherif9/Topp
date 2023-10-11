@@ -1,4 +1,5 @@
-const model =require('../model/doctorvariables')
+const model =require('../model/doctorvariables');
+const Patients = require('../model/patientvariables');
 
 
 const createdoctor = async(req,res) => {
@@ -21,9 +22,13 @@ const updatedoc = async (req, res) => {
  res.send('done');
    }
  const viewpatients= async (req,res)=>{
-    const {username}=req.body;
-    const {patients}= await model.findOne({username:username}).select('patients -_id').exec()
+    const {username}=req.query;
+    const {patients}= await model.findOne({username:username}).select('patients -_id').populate("patients")
   res.send(patients)
  }
- 
- module.exports={createdoctor,updatedoc}
+ const viewpatient= async (req,res)=>{
+  const {username}=req.query;
+  const patient= await Patients.findOne({username:username}).exec()
+res.send(patient)
+}
+ module.exports={createdoctor,updatedoc,viewpatients,viewpatient}

@@ -31,4 +31,6 @@ const viewfamily= async (req, res) => {
 res.send(familymem)
    }
  
+  
+ 
  module.exports={createpatient,addmember,viewfamily}

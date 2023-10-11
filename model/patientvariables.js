@@ -53,9 +53,24 @@ emergencyname:{
 }
 
 ,appointments:{
+    type:[
+        {
+           doctor:    {
+                
+            type: mongoose.Types.ObjectId,
+            ref:'request',
+             
+        },
+        time:{
+type:String
+        }
+    }
+    ]
+}
+,
+pres:{
     type:Array
 }
-
 
 })
 
