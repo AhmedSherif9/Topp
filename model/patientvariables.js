@@ -52,7 +52,9 @@ emergencyname:{
     required:true
 }
 
-
+,appointments:{
+    type:Array
+}
 
 
 })
