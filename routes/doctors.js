@@ -23,8 +23,8 @@ const updatedoc = async (req, res) => {
    }
  const viewpatients= async (req,res)=>{
     const {username}=req.query;
-    const {patients}= await model.findOne({username:username}).select('patients -_id').populate("patients")
-  res.send(patients)
+    const {appintments}= await model.findOne({username:username}).select('appointments -_id').populate("appointments.patient")
+  res.send(appintments)
  }
  const viewpatient= async (req,res)=>{
   const {username}=req.query;

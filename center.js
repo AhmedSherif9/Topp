@@ -1,8 +1,8 @@
 const express= require('express')
 const mongoose=require('mongoose')
-const {createpatient, addmember, viewfamily}= require('./routes/patient')
+const {createpatient, addmember, viewfamily, viewdocss}= require('./routes/patient')
 const { createdoctor, updatedoc, viewpatients, viewpatient } = require('./routes/doctors')
-const { deleteuser, docreqs, createadmin, viewapt, viewpres } = require('./routes/admin')
+const { deleteuser, docreqs, createadmin, viewapt, viewpres, viewdocapt } = require('./routes/admin')
 require ('dotenv').config()
 const app = express()
 const cors = require('cors');
@@ -35,37 +35,12 @@ app.put("/docedit",updatedoc)
 app.post("/addmember",addmember)
 app.get("/family",viewfamily)
 app.get("/patientapt",viewapt)
+
+app.get("/doctorapt",viewdocapt)
 app.get("/pres",viewpres)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 app.get("/viewpatients",viewpatients)
+app.get("/alldocs",viewdocss)
 
-app.get("/viewpatient",viewpatient)
 
 
 

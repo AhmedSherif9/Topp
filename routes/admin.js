@@ -66,12 +66,19 @@ const updatepack = async (req, res) => {
  const viewapt= async(req,res)=>{
   
   const {username}=req.query
-  const {appointments}= await Patients.findOne({username:username}).select('appointments -_id').exec()
+  const appointments= await Patients.findOne({username:username}).populate('appointments.doctor')
   console.log(appointments)
 res.send(appointments)
 }   
 
+
+const viewdocapt= async(req,res)=>{
   
+  const {username}=req.query
+  const {appointments}= await doctor.findOne({username:username}).populate('appointments.patient')
+  console.log(appointments)
+res.send(appointments)
+}   
 const viewpres= async(req,res)=>{
   
   const {username}=req.query
@@ -82,4 +89,4 @@ res.send(pres)
 
  
  
- module.exports={createadmin,deleteuser,docreqs,viewapt,viewpres}
+ module.exports={createadmin,deleteuser,docreqs,viewapt,viewpres,viewdocapt}

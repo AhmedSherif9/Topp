@@ -1,6 +1,7 @@
 
 const mongoose = require('mongoose')
-const Patients = require('./patientvariables')
+const Patients = require('./patientvariables');
+const { Int32 } = require('mongodb');
 const Schema = mongoose.Schema
 const doctorSchema = new Schema({
     username: {
@@ -63,11 +64,24 @@ const doctorSchema = new Schema({
         required:true
     }
 ,appointments:{
-    type:Array
+    type:[
+        {
+           patient:    {
+                
+            type: mongoose.Types.ObjectId,
+            ref:'patient',
+             
+        },
+        time:{
+type:String
+        }
+    }
+    ]
 }
 
-
-
+,price:{
+    type:String
+}
 
 
 

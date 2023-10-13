@@ -1,3 +1,4 @@
+const doctor = require('../model/doctorvariables');
 const model =require('../model/patientvariables')
 
 
@@ -30,7 +31,28 @@ const viewfamily= async (req, res) => {
    
 res.send(familymem)
    }
- 
+ const viewdocss=async(req,res)=>{
+const {username}=req.body;
+const {package}=await model.find({username:username})
+  const docs= await doctor.find()
+  docs.forEach(({price}) => {
+   var disc=1
+   if(package==="silver"){
+      disc=0.6
+   }
+
+   if(package==="gold"){
+      disc=0.4
+   }
+
+   if(package==="platinum"){
+      disc=0.2
+   }
+   price=(price+price*0.1)*disc;
+   
+  });
+  res.json(docs)
+ }
   
  
- module.exports={createpatient,addmember,viewfamily}
+ module.exports={createpatient,addmember,viewfamily,viewdocss}
